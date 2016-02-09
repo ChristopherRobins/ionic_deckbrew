@@ -1,0 +1,63 @@
+<ion-header-bar id="mainHeader" class="bar-dark">
+<!-- <ion-header-bar ng-controller="ColorCtrl" id="mainHeader" class="bar-dark"> -->
+  <h1 class="title">DeckBrew</h1>
+</ion-header-bar>
+<div id="search" class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input ng-model="search.name" type="search" placeholder="Search">
+  </label>
+</div>
+
+<ion-content>
+  <!-- <label class="item item-input item-select">
+    <div class="row">
+      <div class="input-label">
+        Rarity
+      </div>
+      <select>
+        <option selected>Any</option>
+        <option>Common</option>
+        <option>Uncommon</option>
+        <option>Rare</option>
+        <option>Mythic</option>
+      </select>
+    </div>
+  </label> -->
+
+  <ion-list id="mainList" class="list card">
+    <ion-item dir-paginate="card in cards | filter:search | itemsPerPage: pageSize" current-page="currentPage">
+      <a class="item item-thumbnail-left" href="#/details/{{card.id}}">
+        <img class="cardImage" data-ng-src="{{card.editions[0].image_url}}" alt="card image">
+        <h2 data-ng-ng-bind-html="card.name">{{card.name}}</h2>
+        <p data-ng-bind-html="card.editions[0].rarity">{{card.editions[0].rarity}}</p>
+        <p data-ng-bind-html="card.text">{{card.text}}</p>
+        </br>
+        <p data-ng-bind-html="card.editions[0].set">{{card.editions[0].set}}</p>
+      </a>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<div class="bar bar-footer bar-dark other-controller">
+  <dir-pagination-controls class="pagination">
+    <ul class="pagination" ng-if="1 < pages.length || !autoHide">
+      <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }">
+          <a href="" ng-click="setCurrent(1)">&laquo;</a>
+      </li>
+      <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }">
+          <a href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
+      </li>
+      <li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+          <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+      </li>
+
+      <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }">
+          <a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
+      </li>
+      <li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
+          <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+      </li>
+  </ul>
+  </dir-pagination-controls>
+</div>

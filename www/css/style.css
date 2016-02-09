@@ -1,0 +1,89 @@
+/* Empty. Add your own CSS if you like */
+
+#detailImage {
+  max-width: 223px;
+}
+
+.item-thumbnail-left > img:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img:first-child, .item-thumbnail-left .item-content .item-image {
+  max-height: 111px;
+  height: 111px;
+  overflow: visible;
+}
+
+#mainList .list .item {
+  height: 160px;
+}
+
+.cardImage {
+  max-height: 120px;
+  overflow: visible;
+}
+
+.cardFocus p {
+  padding: 5px;
+  text-align: left;
+  word-break: normal;
+  white-space: normal;
+}
+
+/*.colorBox {
+  width: 50%;
+}*/
+
+#mainHeader h1 {
+  text-align: left;
+  color: #fff;
+}
+
+#search {
+  width: 70%;
+  float: right;
+}
+
+#buyIt {
+  position: absolute;
+  float: right;
+  right: 0;
+}
+
+.pagination {
+  width: 100%;
+  max-width: 325px;
+}
+
+.pagination ul {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.pagination ul li {
+  display: inline;
+  line-height: 30px;
+  padding: 12px 0;
+}
+
+.pagination ul li a {
+  text-decoration: none;
+  padding: 2% 6%;
+  color: #fff;
+}
+
+.active {
+  background-color: #efefef;
+}
+
+.pagination .active a {
+  color: #111;
+  font-weight: bold;
+}
+
+.other-controller {
+  border: none;
+  height: 40px;
+}
+.other-controller small {
+  color: #99c;
+}

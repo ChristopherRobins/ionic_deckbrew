@@ -1,0 +1,28 @@
+<ion-header-bar class="bar-dark">
+  <h1 class="title">DeckBrew</h1>
+</ion-header-bar>
+
+<ion-content id="mainPost" class="padding">
+  <div data-ng-controller="DetailsController" class="list card">
+    <div class="item item-avatar">
+      <img data-ng-src="../img/{{card.editions[0].rarity}}.png">
+      <h2>{{card.name}}</h2>
+    </div>
+    <div class="item item-image cardFocus">
+      <img id="detailImage" data-ng-src="{{card.editions[0].image_url}}">
+      <p>artist: {{card.editions[0].artist}}</p>
+      <p>{{card.text}}</p>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer-bar class="bar-dark">
+  <button class="button button-dark icon-left ion-home" ng-click="goHome()">
+
+  </button>
+  <a id="buyIt" class="icon-right assertive" target="_blank" href="{{card.store_url}}">
+    <button class="button button-assertive icon-right ion-ios-cart">
+    Buy it now!
+    </button>
+  </a>
+</ion-footer-bar>

@@ -1,0 +1,16 @@
+<!-- <div class="row">
+  <ion-checkbox checked class="colorBox checkbox-stable" ng-model="filter.white">White</ion-checkbox>
+  <ion-checkbox checked class="colorBox checkbox-positive" ng-model="filter.blue">Blue</ion-checkbox>
+</div>
+<div class="row">
+  <ion-checkbox checked class="colorBox checkbox-dark" ng-model="filter.black">Black</ion-checkbox>
+  <ion-checkbox checked class="colorBox checkbox-assertive" ng-model="filter.red">Red</ion-checkbox>
+</div>
+<div class="row">
+  <ion-checkbox checked class="colorBox checkbox-balanced" ng-model="filter.green">Green</ion-checkbox>
+  <ion-checkbox checked class="colorBox checkbox-energized" ng-model="filter.any">Any</ion-checkbox>
+</div> -->
+
+<div ng-controller="ColorCtrl">
+<ion-checkbox ng-repeat="color in colorList" class="colorBox {{color.class}}" ng-click="consoleColors()" ng-model="color.checked">{{color.text}}</ion-checkbox>
+</div>
