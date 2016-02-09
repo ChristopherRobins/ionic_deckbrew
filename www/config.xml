@@ -6,14 +6,14 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>DeckBrew - Ionic</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        A small assignment I did for class to learn ionic, angular, and API's
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author>
+        Christopher Robins
     </author>
 
     <!--
